@@ -6,23 +6,11 @@ import { GoogleOAuthProvider } from '@react-oauth/google';
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import LandingPage from './Components/Landing page/landingpage';
 import { Fragment, useState } from 'react';
-import { Dashboard } from '@mui/icons-material';
+import Dashboard from './Components/Register/Dashboard';
+import SetAuth from './Components/authorisation';
 function App() {
 
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
- function setAuth (boolean){
-    setIsAuthenticated(boolean);
-  };
-
-  function Logincheck(){
-    if (!isAuthenticated){
-      return <Login/>
-    }
-    else{
-      <Navigate to = "/dashboard"/>
-    }
-  }
 
 
   return (
@@ -33,7 +21,7 @@ function App() {
           <Routes>
               <Route index element={<LandingPage />} />
               <Route path='/' element={<Header />}>
-              <Route exact path='/login' element = {<Logincheck/>}/>
+              <Route exact path='/login' element = {<Login/>}/>
               <Route exact path='/register' element = {<Register /> }/>
               <Route exact path='/dashboard' element = <Dashboard /> />
             </Route>

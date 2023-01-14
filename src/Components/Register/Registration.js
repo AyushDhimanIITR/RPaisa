@@ -2,10 +2,14 @@ import React, { useState } from 'react'
 import { Grid, Paper, Avatar, Typography, TextField, Button } from '@mui/material'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import {GoogleLogin} from '@react-oauth/google';
+// import { toast } from "react-toastify";
 
-import { Link } from 'react-router-dom';
+import { Link, Routes,Route } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
+import { Dashboard, SettingsInputAntennaSharp } from '@mui/icons-material';
+import SetAuth from '../authorisation';
 
-const Register = () => {
+const Register = ({setAuth}) => {
     // connecting req.body to backend
 
 
@@ -37,11 +41,25 @@ const Register = () => {
             }
           );
           const parseRes = await response.json();
-          console.log(parseRes);}
+          console.log(parseRes);
+          if (parseRes) {
+            localStorage.setItem("token", parseRes);
+            window.location.assign("/login");
+            console.log("executed")
+            
+            // toast.success("Register Successfully");
+          } else {
+            // <SetAuth value = {false}/>
+            {<h1> OOPS!! Something Went Wrong</h1>}
+            // toast.error(parseRes);
+          }
+        }
+
+          
           
 
           catch (err) {
-            console.error(err.message);
+            console.error(err);
           }
         };
 
@@ -87,7 +105,8 @@ const Register = () => {
                         }} /> */}
                          <Grid container style={{marginTop:'1em'}} justifyContent="flex-end">
                         <Grid item>
-                            <Link to='/signin' style={{textDecoration:'none'}}>
+                        <br/>
+                            <Link to='/login' style={{textDecoration:'none'}}>
                             Already have an account? Sign In
                             </Link>
                         </Grid>
