@@ -2,12 +2,18 @@ import React, { useState } from 'react'
 import { Grid, Paper, Avatar, TextField, Button } from '@mui/material'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import {GoogleLogin } from '@react-oauth/google';
+import { Navigate } from 'react-router-dom';
 import jwtDecode from 'jwt-decode';
 
-const Signin = () => {
+import { SettingsInputAntennaSharp } from '@mui/icons-material';
+
+const Login = () => {
     const paperStyle = { padding: '30px 20px', width: 300, margin: "20px auto" }
     const headerStyle = { margin: 0 }
     const avatarStyle = { backgroundColor: '#000000' }
+    const marginTop = { marginTop: 10 }
+    
+    
     // const marginTop = { marginTop: 10 }
 
     const handleSubmit=(e)=>{
@@ -44,6 +50,10 @@ const Signin = () => {
                     <TextField fullWidth label='Email' placeholder="Enter your email" handleChange={handleChange} />
                     <TextField fullWidth label='Password' placeholder="Enter your password" type={showPassword? 'text' : 'password'}/>
 
+                    <Button  style={marginTop} type='submit' variant='contained' color='primary'>Sign In</Button>
+                    <GoogleLogin onSuccess={res => {
+                        console.log(res);
+                    }}/>
                     <Button style={{margin:'1em 0'}} type='submit' variant='contained' color='primary'>Sign In</Button>
                     <GoogleLogin 
                     onSuccess={(response) => getUser(response)}
@@ -56,4 +66,4 @@ const Signin = () => {
     )
 }
 
-export default Signin;
+export default Login;
