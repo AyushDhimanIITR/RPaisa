@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Grid, Paper, Avatar, Typography, TextField, Button } from '@mui/material'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import {GoogleLogin} from '@react-oauth/google';
-import jwtDecode from 'jwt-decode';
+
 import { Link } from 'react-router-dom';
 
 const Register = () => {
@@ -36,7 +36,9 @@ const Register = () => {
               body: JSON.stringify(body)
             }
           );
-          const parseRes = await response.json();}
+          const parseRes = await response.json();
+          console.log(parseRes);}
+          
 
           catch (err) {
             console.error(err.message);
@@ -63,14 +65,14 @@ const Register = () => {
                     <h2 style={headerStyle}>Sign Up</h2>
                     <Typography variant='caption' gutterBottom>Please fill this form to create an account !</Typography>
                 </Grid>
-                <form method='POST' onSubmit={onSubmitForm}>
-                    <TextField fullWidth label='Name' value={name} placeholder="Your Name" onChange={e => onChange(e)} name='name' />
+                <form onSubmit={onSubmitForm}>
+                    <TextField fullWidth  value={name} placeholder="Your Name" onChange={e => onChange(e)} name='name' />
                     <TextField fullWidth name="email" type = "text"
                     value={email}
                     placeholder="email"
                     onChange={e => onChange(e)} />
                     
-                    <TextField fullWidth label='Enrollment Number' name='enrolmentNumber'   value={enrolment} placeholder="Enter your Enrollment number"  onChange={e => onChange(e)} />
+                    <TextField fullWidth  name='enrolment' type = 'text'value={enrolment} placeholder="Enter your Enrollment number"  onChange={e => onChange(e)} />
                     <TextField fullWidth  type="password"
                     name="password"
                     value={password}
@@ -79,10 +81,10 @@ const Register = () => {
                     
 
                     <Button style={{margin:'1em 0'}} type='submit' variant='contained' color='primary'>Sign up</Button>
-                    <GoogleLogin onSuccess={(response) => getUser(response)}
+                    {/* <GoogleLogin onSuccess={(response) => getUser(response)}
                         onError={() => {
                             console.log('Login Failed');
-                        }} />
+                        }} /> */}
                          <Grid container style={{marginTop:'1em'}} justifyContent="flex-end">
                         <Grid item>
                             <Link to='/signin' style={{textDecoration:'none'}}>

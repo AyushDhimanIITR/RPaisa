@@ -3,7 +3,6 @@ import { Grid, Paper, Avatar, TextField, Button } from '@mui/material'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import {GoogleLogin } from '@react-oauth/google';
 import { Navigate } from 'react-router-dom';
-import jwtDecode from 'jwt-decode';
 
 import { SettingsInputAntennaSharp } from '@mui/icons-material';
 
@@ -16,23 +15,23 @@ const Login = () => {
     
     // const marginTop = { marginTop: 10 }
 
-    const handleSubmit=(e)=>{
-        console.log('form');
-        e.preventDefault();
-    }
+    // const handleSubmit=(e)=>{
+    //     console.log('form');
+    //     e.preventDefault();
+    // }
 
-    const getUser = (response) => {
-        console.log(response);
-        const token = response.credential;
-        var userObject = jwtDecode(token);
-        console.log(userObject);
-      }
+    // const getUser = (response) => {
+    //     console.log(response);
+    //     const token = response.credential;
+    //     var userObject = jwtDecode(token);
+    //     console.log(userObject);
+    //   }
 
-    const handleChange = () =>{
-        console.log('handleChange');
-    }
-    const [showPassword, setShowPassword] = useState(false);
-    const handleShowPassword = () => setShowPassword(!showPassword);
+    // const handleChange = () =>{
+    //     console.log('handleChange');
+    // }
+    // const [showPassword, setShowPassword] = useState(false);
+    // const handleShowPassword = () => setShowPassword(!showPassword);
 
 
     return (
@@ -45,21 +44,21 @@ const Login = () => {
                     <h2 style={headerStyle}>Sign In</h2>
                     <br />
                 </Grid>
-                <form onSubmit={handleSubmit}>
+                <form >
                     
-                    <TextField fullWidth label='Email' placeholder="Enter your email" handleChange={handleChange} />
-                    <TextField fullWidth label='Password' placeholder="Enter your password" type={showPassword? 'text' : 'password'}/>
+                    {/* <TextField fullWidth label='Email' placeholder="Enter your email" handleChange={handleChange} />
+                    <TextField fullWidth label='Password' placeholder="Enter your password" type={showPassword? 'text' : 'password'}/> */}
 
                     <Button  style={marginTop} type='submit' variant='contained' color='primary'>Sign In</Button>
-                    <GoogleLogin onSuccess={res => {
+                    {/* <GoogleLogin onSuccess={res => {
                         console.log(res);
-                    }}/>
+                    }}/> */}
                     <Button style={{margin:'1em 0'}} type='submit' variant='contained' color='primary'>Sign In</Button>
-                    <GoogleLogin 
+                    {/* <GoogleLogin 
                     onSuccess={(response) => getUser(response)}
                     onError={() =>{
                         console.log('Login Failed');
-                    }} />
+                    }} /> */}
                 </form>
             </Paper>
         </Grid>
