@@ -8,34 +8,44 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import ContactlessIcon from '@mui/icons-material/Contactless';
 import LoginIcon from '@mui/icons-material/Login';
-import Signup from '../Register/Registration';
-import { Outlet,Link} from 'react-router-dom';
+
+import { Outlet, Link } from 'react-router-dom';
 
 const Header = () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="static" style={{backgroundColor:'#3D424A'}}>
         <Toolbar>
-          <IconButton
+          <IconButton 
             size="large"
             edge="start"
-            color="inherit"
+            style={{color:'#E6E5DE'}}
             aria-label="menu"
             sx={{ mr: 2 }}
           >
             <MenuIcon />
-          </IconButton>
-          <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
-            <ContactlessIcon sx={{fontSize: 'large' }} />
-            R Paisa
-          </Typography>
-          
-          <Button><Typography color={"#E6E5DE"}><LoginIcon sx={{fontSize:'large'}}/> Register</Typography></Button>
+              </IconButton>
+            
+              <Typography variant="h5" component="div" sx={{ flexGrow: 1 }}>
+                <Link to='/' style={{color: '#E6E5DE', textDecoration:'none'}}>
+
+                <ContactlessIcon sx={{ fontSize: 'large' }} />
+                R Paisa
+                </Link>
+              </Typography>
+
+
+          <Link to='/signup' style={{textDecoration:'none'}}>
+
+            <Button><Typography color={"#E6E5DE"}><LoginIcon sx={{ fontSize: 'large' }} /> Register</Typography></Button>
+
+          </Link>
+
 
         </Toolbar>
       </AppBar>
       <Outlet />
-    </Box>
+    </Box >
   );
 }
 

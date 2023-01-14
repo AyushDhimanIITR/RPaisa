@@ -1,11 +1,6 @@
 import React from 'react'
 import { Grid, Paper, Avatar, Typography, TextField, Button } from '@mui/material'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import Radio from '@mui/material/Radio';
-import RadioGroup from '@mui/material/RadioGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import FormControl from '@mui/material/FormControl';
-import FormLabel from '@mui/material/FormLabel';
 import {GoogleLogin} from '@react-oauth/google';
 import {Outlet} from 'react-router-dom';
 const Signup = () => {
@@ -26,13 +21,13 @@ const Signup = () => {
                 <form>
                     <TextField fullWidth label='Name' placeholder="Enter your name" />
                     <TextField fullWidth label='Email' placeholder="Enter your email" />
-                    <FormControl component="fieldset" style={marginTop}>
+                    {/* <FormControl component="fieldset" style={marginTop}>
                         <FormLabel component="legend">Gender</FormLabel>
                         <RadioGroup aria-label="gender" name="gender" style={{ display: 'initial' }}>
                             <FormControlLabel value="female" control={<Radio />} label="Female" />
                             <FormControlLabel value="male" control={<Radio />} label="Male" />
                         </RadioGroup>
-                    </FormControl>
+                    </FormControl> */}
                     <TextField fullWidth label='Phone Number' placeholder="Enter your phone number" />
                     <TextField fullWidth label='Password' placeholder="Enter your password"/>
                     <TextField fullWidth label='Confirm Password' placeholder="Confirm your password"/>
