@@ -3,7 +3,7 @@ import { Grid, Paper, Avatar, Typography, TextField, Button } from '@mui/materia
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import {GoogleLogin} from '@react-oauth/google';
 import {Outlet} from 'react-router-dom';
-const Signup = () => {
+const Register = () => {
     const paperStyle = { padding: '30px 20px', width: 300, margin: "20px auto" }
     const headerStyle = { margin: 0 }
     const avatarStyle = { backgroundColor: '#000000' }
@@ -46,4 +46,4 @@ const Signup = () => {
     )
 }
 
-export default Signup;
+export default Register;

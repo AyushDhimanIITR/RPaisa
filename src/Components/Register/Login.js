@@ -2,12 +2,17 @@ import React from 'react'
 import { Grid, Paper, Avatar, TextField, Button } from '@mui/material'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import {GoogleLogin } from '@react-oauth/google';
+import { Navigate } from 'react-router-dom';
 
-const Signin = () => {
+import { SettingsInputAntennaSharp } from '@mui/icons-material';
+
+const Login = () => {
     const paperStyle = { padding: '30px 20px', width: 300, margin: "20px auto" }
     const headerStyle = { margin: 0 }
     const avatarStyle = { backgroundColor: '#000000' }
     const marginTop = { marginTop: 10 }
+    
+    
     return (
         <Grid>
             <Paper elevation={20} style={paperStyle}>
@@ -30,7 +35,7 @@ const Signin = () => {
                     </FormControl> */}
                     <TextField fullWidth label='Password' placeholder="Enter your password"/>
 
-                    <Button style={marginTop} type='submit' variant='contained' color='primary'>Sign In</Button>
+                    <Button  style={marginTop} type='submit' variant='contained' color='primary'>Sign In</Button>
                     <GoogleLogin onSuccess={res => {
                         console.log(res);
                     }}
@@ -44,4 +49,4 @@ const Signin = () => {
     )
 }
 
-export default Signin;
+export default Login;
