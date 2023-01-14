@@ -1,0 +1,13 @@
+.A {
+    overflow: hidden;
+    background-color: #3D424A;
+    padding: 20px 10px;
+    border-color: rgb(251, 109, 57);
+    color: #E6E5DE;
+  }
+  
+  #bc {
+    border-radius: 5px;
+    align-content: center;
+    margin-left: 14em;
+  }

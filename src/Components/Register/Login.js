@@ -70,8 +70,8 @@ const Login = () => {
     // const handleChange = () =>{
     //     console.log('handleChange');
     // }
-    // const [showPassword, setShowPassword] = useState(false);
-    // const handleShowPassword = () => setShowPassword(!showPassword);
+    const [showPassword, setShowPassword] = useState(false);
+    const handleShowPassword = () => setShowPassword(!showPassword);
 
 
     return (
@@ -86,6 +86,7 @@ const Login = () => {
                 </Grid>
                 <form onSubmit={onSubmitForm}>
                     
+<<<<<<< HEAD
                     <TextField fullWidth   type="text"
                         name="enrolment"
                         placeholder='Enrollment Number'
@@ -98,6 +99,11 @@ const Login = () => {
                         onChange={e => onChange(e)}/>
 
                     {/* <Button  style={marginTop} type='submit' variant='contained' color='primary'>Log In</Button> */}
+=======
+                    <TextField fullWidth label='Email' placeholder="Enter your email"  />
+                    <TextField fullWidth label='Password' placeholder="Enter your password" type={showPassword? 'text' : 'password'}/>
+
+>>>>>>> bccd584a542dac1cf008ee80adde8e4d6260753c
                     {/* <GoogleLogin onSuccess={res => {
                         console.log(res);
                     }}/> */}

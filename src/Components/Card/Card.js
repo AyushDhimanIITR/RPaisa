@@ -1,38 +1,37 @@
-import './card.css';
-const Card = () =>{
-    return(
+import React from "react";
+import styled from "styled-components";
+import Stack from "@mui/material/Stack";
+import "./Card.css";
 
-         <main>
-    <svg width="300" height="800">
-      <g class="coin1">
-        <circle cx="260" cy="220" r="35" fill="#ffd900"/>
-        <circle cx="260" cy="220" r="25" fill="#fff300"/>
-        <rect   x="255"  y="205"  width="10" height="30" fill="#ffd900"/>
-      </g>
+function Card(props) {
+  return (
+    <div className="Rcard">
+      <Stack spacing={7} direction="row">
+        <span>
+          <h2>Rpaisa</h2>
+        </span>
+        <span>
+          <div>
+            <h5>Current Balance</h5>
+          </div>
+          <div>
+            {/* <h2>props.currentbalance</h2> */}
+            <h2>{props.currentbalance}</h2>
+          </div>
+        </span>
+      </Stack>
 
-      <g class="coin2">
-        <circle cx="340" cy="230" r="35" fill="#ffd900"/>
-        <circle cx="340" cy="230" r="25" fill="#fff300"/>
-        <rect   x="335"  y="215"  width="10" height="30" fill="#ffd900"/>
-      </g>
-      <g class="coin3">
-        <circle cx="420" cy="240" r="35" fill="#ffd900"/>
-        <circle cx="420" cy="240" r="25" fill="#fff300"/>
-        <rect   x="415"  y="225"  width="10" height="30" fill="#ffd900"/>
-      </g>
-
-      <g class="credit-card">
-        <rect x="200" y="200" rx="25" ry="25" width="400" height="250" fill="#00a8ff"/>
-        <rect x="200" y="245" width="400" height="50" fill="#0b6fa2"/>
-        <rect x="210" y="320" width="270" height="25" fill="#e5e5e5"/>
-        <rect x="500" y="320" width="85"  height="25" fill="#e5e5e5"/>
-        <rect x="210" y="400" width="85"  height="25" fill="#e5e5e5"/>
-      </g>
-    </svg>
-  </main>
-
-
-    )
+      <div>
+        <div>
+          {/* <h3>props.enrollmentno</h3> */}
+          <h3>{props.enrollmentno}</h3>
+        </div>
+        <div>
+          {/* <h4>props.name</h4> */}
+          <h4>{props.name}</h4>
+        </div>
+      </div>
+    </div>
+  );
 }
-
 export default Card;

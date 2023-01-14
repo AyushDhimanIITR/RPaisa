@@ -105,7 +105,10 @@ const Register = ({setAuth}) => {
                         }} /> */}
                          <Grid container style={{marginTop:'1em'}} justifyContent="flex-end">
                         <Grid item>
+<<<<<<< HEAD
                         <br/>
+=======
+>>>>>>> bccd584a542dac1cf008ee80adde8e4d6260753c
                             <Link to='/login' style={{textDecoration:'none'}}>
                             Already have an account? Sign In
                             </Link>
