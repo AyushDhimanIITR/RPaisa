@@ -2,11 +2,8 @@ import React, { useState } from 'react'
 import { Grid, Paper, Avatar, TextField, Button } from '@mui/material'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import {GoogleLogin } from '@react-oauth/google';
-<<<<<<< HEAD
 import { Navigate } from 'react-router-dom';
-=======
 import jwtDecode from 'jwt-decode';
->>>>>>> 03c1c8dc7b6fc2ce1efab50187b8f8759b075719
 
 import { SettingsInputAntennaSharp } from '@mui/icons-material';
 
@@ -14,11 +11,9 @@ const Login = () => {
     const paperStyle = { padding: '30px 20px', width: 300, margin: "20px auto" }
     const headerStyle = { margin: 0 }
     const avatarStyle = { backgroundColor: '#000000' }
-<<<<<<< HEAD
     const marginTop = { marginTop: 10 }
     
     
-=======
     // const marginTop = { marginTop: 10 }
 
     const handleSubmit=(e)=>{
@@ -40,7 +35,6 @@ const Login = () => {
     const handleShowPassword = () => setShowPassword(!showPassword);
 
 
->>>>>>> 03c1c8dc7b6fc2ce1efab50187b8f8759b075719
     return (
         <Grid>
             <Paper elevation={20} style={paperStyle}>
@@ -56,16 +50,13 @@ const Login = () => {
                     <TextField fullWidth label='Email' placeholder="Enter your email" handleChange={handleChange} />
                     <TextField fullWidth label='Password' placeholder="Enter your password" type={showPassword? 'text' : 'password'}/>
 
-<<<<<<< HEAD
                     <Button  style={marginTop} type='submit' variant='contained' color='primary'>Sign In</Button>
                     <GoogleLogin onSuccess={res => {
                         console.log(res);
-                    }}
-=======
+                    }}/>
                     <Button style={{margin:'1em 0'}} type='submit' variant='contained' color='primary'>Sign In</Button>
                     <GoogleLogin 
                     onSuccess={(response) => getUser(response)}
->>>>>>> 03c1c8dc7b6fc2ce1efab50187b8f8759b075719
                     onError={() =>{
                         console.log('Login Failed');
                     }} />

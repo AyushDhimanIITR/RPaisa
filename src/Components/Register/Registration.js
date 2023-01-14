@@ -2,40 +2,57 @@ import React, { useState } from 'react'
 import { Grid, Paper, Avatar, Typography, TextField, Button } from '@mui/material'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import {GoogleLogin} from '@react-oauth/google';
-<<<<<<< HEAD
-import {Outlet} from 'react-router-dom';
-const Register = () => {
-=======
 import jwtDecode from 'jwt-decode';
 import { Link } from 'react-router-dom';
 
-const Signup = () => {
->>>>>>> 03c1c8dc7b6fc2ce1efab50187b8f8759b075719
+const Register = () => {
+    // connecting req.body to backend
+
+
+    const [inputs, setInputs] = useState({
+        name: "",
+        enrolment: "",
+        email: "",
+        password: "",
+        
+      });
+    
+      const { name,enrolment,email, password,  } = inputs;
+    
+      const onChange = e =>
+        setInputs({ ...inputs, [e.target.name]: e.target.value });
+    
+      const onSubmitForm = async e => {
+        e.preventDefault();
+        try {
+          const body = { name,enrolment,email, password, };
+          const response = await fetch(
+            "http://localhost:4000/auth/register",
+            {
+              method: "POST",
+              headers: {
+                "Content-type": "application/json"
+              },
+              body: JSON.stringify(body)
+            }
+          );
+          const parseRes = await response.json();}
+
+          catch (err) {
+            console.error(err.message);
+          }
+        };
+
+
+
+
+
+
     const paperStyle = { padding: '30px 20px', width: 300, margin: "20px auto" }
     const headerStyle = { margin: 0 }
     const avatarStyle = { backgroundColor: '#000000' }
 
-    const [form, setForm] = useState(false)
     
-    const handleSubmit=async(e) =>{
-        e.preventDefault();
-        console.log('first');
-    }
-
-    const [showPassword, setShowPassword] = useState(false);
-    const handleShowPassword = () => setShowPassword(!showPassword);
-
-    const handleChange = (e) => setForm({
-        ...form, [e.target.name]: e.target.value
-    });
-
-    const getUser = (response) => {
-        console.log(response);
-        const token = response.credential;
-        var userObject = jwtDecode(token);
-        console.log(userObject);
-    }
-
     return (
         <Grid>
             <Paper elevation={20} style={paperStyle}>
@@ -46,13 +63,20 @@ const Signup = () => {
                     <h2 style={headerStyle}>Sign Up</h2>
                     <Typography variant='caption' gutterBottom>Please fill this form to create an account !</Typography>
                 </Grid>
-                <form method='POST' onSubmit={handleSubmit}>
-                    <TextField fullWidth label='Name' name='name' placeholder="Enter your name"  handleChange={handleChange} />
-                    <TextField fullWidth label='Email' name='email' placeholder="Enter your email" handleChange={handleChange} />
+                <form method='POST' onSubmit={onSubmitForm}>
+                    <TextField fullWidth label='Name' value={name} placeholder="Your Name" onChange={e => onChange(e)} name='name' />
+                    <TextField fullWidth name="email" type = "text"
+                    value={email}
+                    placeholder="email"
+                    onChange={e => onChange(e)} />
                     
-                    <TextField fullWidth label='Enrollment Number' name='enrollmentNumber' placeholder="Enter your Enrollment number" handleChange={handleChange} />
-                    <TextField fullWidth name='password' label='Password' type={showPassword ? 'text' : 'password'} handleShowPassword={handleShowPassword} handleChange={handleChange}  placeholder="Enter your password"/>
-                    <TextField fullWidth label='Confirm Password' placeholder="Confirm your password" type='password' />
+                    <TextField fullWidth label='Enrollment Number' name='enrolmentNumber'   value={enrolment} placeholder="Enter your Enrollment number"  onChange={e => onChange(e)} />
+                    <TextField fullWidth  type="password"
+                    name="password"
+                    value={password}
+                    placeholder="password"
+                    onChange={e => onChange(e)}  placeholder="Enter your password"/>
+                    
 
                     <Button style={{margin:'1em 0'}} type='submit' variant='contained' color='primary'>Sign up</Button>
                     <GoogleLogin onSuccess={(response) => getUser(response)}
