@@ -74,7 +74,7 @@ const Register = () => {
                     <TextField fullWidth  type="password"
                     name="password"
                     value={password}
-                    placeholder="password"
+                    
                     onChange={e => onChange(e)}  placeholder="Enter your password"/>
                     
 
