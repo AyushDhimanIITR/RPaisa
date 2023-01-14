@@ -1,0 +1,12 @@
+.A {
+  overflow: hidden;
+  background-color: rgb(249, 162, 239);
+  padding: 20px 10px;
+  border-color: rgb(251, 109, 57);
+}
+
+#bc {
+  border-radius: 5px;
+  align-content: center;
+  margin-left: 14em;
+}

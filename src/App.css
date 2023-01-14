@@ -1,0 +1,16 @@
+.TokenCard {
+  width: 450px;
+  margin-left: 40px;
+  margin-top: 20px;
+}
+.activity {
+  margin-left: 40px;
+  align-content: flex-end;
+  margin-right: 300px;
+}
+.overall {
+  background-image: url(./back.jpg);
+  background-size: cover;
+  height: 50vw;
+  background-repeat: no-repeat;
+}

@@ -1,0 +1,21 @@
+.act {
+  background-color: hotpink;
+  text-align: center;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 80vw;
+  margin: 0 auto;
+}
+
+.att {
+  background-color: hotpink;
+  display: flex;
+  justify-content: center;
+  width: 80vw !important;
+  margin: 0 auto;
+  position: relative;
+  left: 10rem;
+  border-radius: 15px;
+}
