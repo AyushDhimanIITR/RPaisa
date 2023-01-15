@@ -1,5 +1,5 @@
 .act {
-    background-color: hotpink;
+    background-color: #4FD6CC;
     text-align: center;
     height: 50px;
     display: flex;
@@ -7,10 +7,12 @@
     justify-content: flex-end;
     width: 80vw;
     margin: 0 auto;
+    padding: 30px;
+    margin-top: 6px;
   }
   
   .att {
-    background-color: hotpink;
+    background-color: #4FD6CC;
     display: flex;
     justify-content: center;
     width: 80vw !important;
@@ -18,4 +20,6 @@
     position: relative;
     left: 10rem;
     border-radius: 15px;
+    padding: 10px;
+    margin-top: 10px;
   }

@@ -6,31 +6,70 @@ import Card from '../Card/Card';
 import Options from '../Options/Options';
 import RecentActivity from '../RecentActivity/RecentActivity';
 import Activity from '../Activity/Activity';
+import React, { useEffect, useState } from "react";
+import Cardimg from "./MyCreditCard.svg";
+// import { toast } from "react-toastify";
 
-function Dashboard () {
-    return (
-        <div>
-            <div className="overall">
+const Dashboard = () => {
+  const [name, setName] = useState("");
+  const [amount, setamount] = useState("");
+  const jwttoken = window.localStorage.token;
+    console.log(jwttoken)
+  const getProfile = async () => {
+    try {
+      const res = await fetch("http://localhost:4000/dashboard/", {
+        method: "GET",
+        headers: { token: jwttoken }
+      });
+
+      const parseData = await res.json();
+      setName(parseData.name);
+      setamount(parseData.amount);
+    } catch (err) {
+      console.error(err.message);
+    }
+  };
+
+  const logout = async e => {
+    e.preventDefault();
+    try {
+      localStorage.removeItem("token");
+      window.location.assign("/login");
+    //   toast.success("Logout successfully");
+    } catch (err) {
+      console.error(err.message);
+    }
+  };
+
+  useEffect(() => {
+    getProfile();
+  }, []);
+
+  return (
+    <div>
+    <div className="overall">
                 <div className="userName">
-                    <Name />
+                    <Name name = {name}/>
                 </div>
-                <Stack spacing={4} direction="row">
+                <Stack spacing={80} direction="row">
+                <div className='contain'>
                     <div className="TokenCard">
-                        <Card />
+                        <img src = {Cardimg}/>
                     </div>
                     <div className="Services">
                         <Options />
+                    </div>
                     </div>
                 </Stack>
                 <div className="YourActivity">
                     <RecentActivity />
                 </div>
                 <div className="activity">
-                    <Activity />
+                    <Activity amount = {amount} />
                 </div>
             </div>
-        </div>
-    );
-}
+            </div>
+        );
+};
 
 export default Dashboard;
