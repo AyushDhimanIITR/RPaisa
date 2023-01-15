@@ -6,13 +6,13 @@ function Activity(props) {
   return (
     <div>
       <div className="att">
-        <h4>Your required sum is &nbsp; </h4>
+        <h4>You have Rs. {props.amount} in your wallet</h4>
 
-        <h2> ${props.sum || "54"} </h2>
+        {/* <h2> ${props.sum || "54"} </h2> */}
 
-        <h4> &nbsp; as of by</h4>
+        {/* <h4> &nbsp; as of by</h4>
 
-        <h3>{props.date}</h3>
+        <h3>{props.date}</h3> */}
       </div>
       {/* <div className="act">
         <Stack spacing={6} direction="row">

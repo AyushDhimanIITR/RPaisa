@@ -14,21 +14,21 @@ function Name(props) {
   );
 
   return (
-    <Stack className="A" spacing={3} direction="row">
-      <span id="ab">
+    <Stack className="A" spacing={1} direction="column">
+      {/* <span id="ab">
         <img src={props.img} alt="user-identity" height={25} width={25} />
       </span>
-      <span id="bc">
-        <div>
+      <span id="bc"> */}
+        <div >
           <h2>
-            {" "}
-            Hi,{props.name} <Emoji symbol="✨" />
+            
+            Hi, {props.name} <Emoji symbol="✨" />
           </h2>
         </div>
         <div>
-          <h5>Let's save your money</h5>
+          <h5>Let's ease the transactions</h5>
         </div>
-      </span>
+      
     </Stack>
   );
 }

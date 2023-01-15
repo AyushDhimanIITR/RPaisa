@@ -1,7 +1,7 @@
 .TokenCard {
     width: 450px;
-    margin-left: 40px;
-    margin-top: 20px;
+    margin-left: 25vw;
+    margin-top: 0;
   }
   .activity {
     margin-left: 40px;
@@ -10,8 +10,26 @@
   }
   .overall {
     /* background-image: url('./back.jpg'); */
-    background-color: #3D424A;
+    background-color: #0D152B;
     background-size: cover;
     height: 50vw;
     background-repeat: no-repeat;
+  }
+  .userName, A css-u10pvi-MuiStack-root{
+    background-color: #0D152B;
+  }
+
+  .services{
+   
+      display: flex;
+      flex-direction: column;
+      margin-left: 75vw;
+    
+  }
+
+  .contain{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
   }

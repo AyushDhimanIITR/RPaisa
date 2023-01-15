@@ -4,6 +4,10 @@
     linear-gradient(to top right, blue, transparent);
   background-blend-mode: screen;
 
+  background-image: url(../Dashboard/MyCreditCard.svg);
+  display: flex;
   border-radius: 20px 20px 20px 20px;
   text-align: center;
+  width: 650;
+  height: 420;
 }

@@ -13,6 +13,7 @@ import Stack from "@mui/material/Stack";
 
 function Options() {
   return (
+    <div className="container">
     <Stack className="one" spacing={3} direction="column">
       <Button size="lg" variant="info">
          Send
@@ -28,6 +29,7 @@ function Options() {
         <Sliders2Vertical /> Others
       </Button>
     </Stack>
+    </div>
   );
 }
 
