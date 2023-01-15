@@ -35,7 +35,7 @@ const Header = () => {
               </Typography>
 
 
-          <Link to='/signup' style={{textDecoration:'none'}}>
+          <Link to='/register' style={{textDecoration:'none'}}>
 
             <Button><Typography color={"#E6E5DE"}><LoginIcon sx={{ fontSize: 'large' }} /> Register</Typography></Button>
 
