@@ -1,0 +1,12 @@
+import Login from "./Register/Login";
+import { Dashboard } from "@mui/icons-material";
+export default function SetAuth (props){
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    setIsAuthenticated(props.value);
+    if (!isAuthenticated){
+      return <Login/>
+    }
+    else{
+      <Dashboard/>
+    }
+  };
